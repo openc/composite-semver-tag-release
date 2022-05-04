@@ -1,16 +1,9 @@
-name: "Terraform module template"
+name: "semver-tag-release"
 description: "Creates a semver release/tag on push to master"
 
 runs:
   using: "composite"
   steps:
-
-      - name: Checkout source code
-        uses: 'actions/checkout@v2'
-        with:
-          ref: ${{ github.ref }}
-          persist-credentials: false
-          fetch-depth: 50
 
       - name: Automated Version Bump
         id: version-bump

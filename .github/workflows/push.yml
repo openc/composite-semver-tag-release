@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+        
       - name: Automated Version Bump
         id: version-bump
         uses: 'phips28/gh-action-bump-version@master'
@@ -17,3 +18,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.BYPASS }}
         with:
           skip-tag: 'false'
+
+      - uses: oleksiyrudenko/gha-git-credentials@v2.1
+        with:
+          global: true
+          name: 'Stephen Bennett'
+          email: 'stephen.bennett@opencorporates.com'
+          token: '${{ secrets.BYPASS }}'
+
+      - name: Tag Changelog
+        uses: fregante/release-with-changelog@v3
+        with:
+          token: ${{ secrets.BYPASS }}

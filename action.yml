@@ -1,0 +1,21 @@
+name: "Terraform module template"
+description: "Creates a semver release/tag on push to master"
+
+runs:
+  using: "composite"
+  steps:
+
+      - name: Checkout source code
+        uses: 'actions/checkout@v2'
+        with:
+          ref: ${{ github.ref }}
+          persist-credentials: false
+          fetch-depth: 50
+
+      - name: Automated Version Bump
+        id: version-bump
+        uses: 'phips28/gh-action-bump-version@master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.BYPASS }}
+        with:
+          skip-tag: 'false'

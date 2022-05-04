@@ -1,6 +1,6 @@
 {
     "name": "composite-semver-tag-release",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/openc/composite-semver-tag-release"

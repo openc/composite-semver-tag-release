@@ -1,0 +1,20 @@
+name: python testing
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Bandit Check
+        uses: jpetrucciani/bandit-check@1.6.2
+        with:
+          path: .      
+
+      - name: semgrep-action
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: auto
+          auditOn: push      

@@ -1,0 +1,10 @@
+# primary dev files and folders
+/scr/* @tech
+/test/* @tech
+
+# primary devops files and folders
+/.github/* @devops
+/deploy/*  @devops
+/infra/*  @devops
+Dockerfile @devops
+docker-compose.yml @devops

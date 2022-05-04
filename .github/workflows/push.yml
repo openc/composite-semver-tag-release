@@ -26,12 +26,9 @@ jobs:
         with:
           skip-tag: 'false'
 
-      - uses: oleksiyrudenko/gha-git-credentials@v2.1
-        with:
-          global: true
-          name: 'Stephen Bennett'
-          email: 'stephen.bennett@opencorporates.com'
-          token: '${{ secrets.BYPASS }}'
+      - name: git config
+        run: git config user.name oc-stephen-bennett
+        shell: bash
 
       - name: Tag Changelog
         uses: fregante/release-with-changelog@v3

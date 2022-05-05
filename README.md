@@ -1,5 +1,7 @@
 # Composite semver tag release
 
+[![Push](https://github.com/openc/composite-semver-tag-release/actions/workflows/push.yml/badge.svg)](https://github.com/openc/composite-semver-tag-release/actions/workflows/push.yml)
+
 GitHub composite repository. Used to template the automated creation
 of releases and tags via semver.
 
@@ -9,6 +11,9 @@ The composite runs via hosting a `package.json` in the root of the
 repository. This is used on `push` to master along with `conventional commits`
 since the last release / tag to update the the release / tag. The action
 will also update the `package.json` to the new version.
+
+The action is allowed in master due to using a PAT that is part of the `Allow
+specified actors to bypass required pull requests`
 
 ## Docs
 

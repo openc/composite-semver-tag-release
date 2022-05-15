@@ -1,6 +1,10 @@
 name: "semver-tag-release"
 description: "Creates a semver release/tag on push to master"
 
+inputs:
+  github_token:
+    description: "Token to run Automated Version Bump"
+    required: true
 runs:
   using: "composite"
   steps:
@@ -9,6 +13,6 @@ runs:
         id: version-bump
         uses: 'phips28/gh-action-bump-version@master'
         env:
-          GITHUB_TOKEN: ${{ secrets.BYPASS }}
+          GITHUB_TOKEN: ${{ inputs.github_token }}
         with:
           skip-tag: 'false'
